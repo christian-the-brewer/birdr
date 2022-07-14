@@ -43,3 +43,57 @@ WireFrames:
 ![Wireframes_1_2_3](resources/IMG_1346.jpg)
 ![Wireframes_4_5_6](resources/IMG_1345.jpg)
 ![Wireframes_7_8](resources/IMG_1344.jpg)
+
+Model: Bird
+
+Field| Type 
+--- | --- 
+name | String 
+description |String
+sound | String
+img | String
+owners | array of Strings?
+
+Model: Place
+
+Field| Type 
+--- | --- 
+name | String 
+description |String
+img | String
+owner | String
+
+
+Model: User
+
+Field| Type 
+--- | --- 
+username | String 
+password |String
+
+
+Route Table
+| Route | Method | Description |
+| - | - | - |
+| / | GET | Birdr Home Page route |
+| /birds | GET | Birds Index route |
+| /places | GET | Places Index route |
+| /birds/:id | GET | Birds show route |
+| /places/:id | GET | Places show route |
+| /users/signup | GET | Sign up route |
+| /users/signup | POST | Sign up route |
+| /users/login | GET | login route |
+| /users/login | POST | login route |
+| /users/logout | POST | logout route |
+| /birds/:id | DELETE | Birds delete route |
+| /places/:id | DELETE | Places delete route |
+| /birds/:id/edit | GET | Birds edit route |
+| /places/:id/edit | GET | Places edit route |
+| /birds/:id | PUT | Birds update route |
+| /places/:id | PUT | Places update route |
+| /birds/new | GET | Birds create form route |
+| /places/new | GET | Places create form route |
+| /birds/ | POST | Birds create route |
+| /places/ | POST | Places create route |
+| /birds/mine | GET | list users birds route |
+| /places/mine | GET | list users places route |
