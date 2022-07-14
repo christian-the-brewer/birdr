@@ -35,3 +35,6 @@ User Stories:
 Features:
 -Add sighting counts to birds
 -Add comments
+
+ERD:
+![ERD](resources/IMG_1343.jpg)
