@@ -38,3 +38,8 @@ Features:
 
 ERD:
 ![ERD](resources/IMG_1343.jpg)
+
+WireFrames:
+![Wireframes_1_2_3](resources/IMG_1346.jpg)
+![Wireframes_4_5_6](resources/IMG_1345.jpg)
+![Wireframes_7_8](resources/IMG_1344.jpg)
