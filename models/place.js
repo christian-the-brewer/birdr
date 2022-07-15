@@ -4,7 +4,7 @@ const mongoose = require('./connection')
 //DEFINITION------------------------------
 const { Schema, model } = mongoose
 
-const birdSchema = new Schema(
+const placeSchema = new Schema(
     {
         name: {
             type: String,
@@ -19,14 +19,14 @@ const birdSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'User'
         },
-        places: []
+        birds: []
     },
     {
         timestamps: true,
     }
 )
 
-const Bird = model('Bird', birdSchema)
+const Places = model('Places', placeSchema)
 
 //EXPORT-------------------------------------------
-module.exports = Bird
+module.exports = Places

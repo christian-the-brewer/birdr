@@ -1,0 +1,37 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/birds/{{bird._id}}?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Edit The {{bird.name}}</legend>
+            <label class="form-label">Name:</label>
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="enter name" 
+                class="form-control"
+                value="{{bird.name}}"
+            >
+            <label class="form-label">Description:</label>
+            <input 
+                type="text" 
+                name="description" 
+                class="form-control"
+                value="{{bird.description}}"
+            >
+            <label class="form-label">Image:</label>
+            <input 
+                type="text" 
+                name="description" 
+                class="form-control"
+                value="{{bird.img}}"
+            >
+        </fieldset>
+        <div class="btn-group">
+            <input type="submit" value="Edit {{ bird.name }}" class="btn btn-success">
+            <a href="/birds" class="btn btn-warning">Back</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

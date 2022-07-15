@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
-const birdRoutes = require('./controller/fruit_routes')
+const birdRoutes = require('./controller/bird_routes')
 const userRoutes = require('./controller/user_routes')
 const placeRoutes = require('./controller/place_routes')
 

@@ -1,0 +1,19 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+    <div class="container-md">
+        <article>
+
+            <h2>{{bird.name}}</h2>
+            <p>
+                {{bird.description}}
+            </p>
+            <div class="btn-group">
+
+                <a href="/birds/{{bird._id}}/edit" class="btn btn-primary">Edit {{bird.name}}</a>
+                <form action="/birds/{{bird._id}}?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+            </div>
+        </article>
+    </div>
+{% endblock %}
