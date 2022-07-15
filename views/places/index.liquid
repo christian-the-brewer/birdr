@@ -1,0 +1,25 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div>
+    <h2 class="display-6">All Places</h2>
+    <div class="row">
+
+        {% for place in places %}
+            <div class="card" style="width: 18rem">
+                <h5 class="card-header">{{place.name}}</h5>
+                <div class="card-body">
+                    <h6 class="card-title">
+                        
+                    </h6>
+                    <p class="card-text">
+                        {{place.description}}
+                    </p>
+                    
+                    <a href="/places/{{place._id}}" class="btn btn-info">View {{place.name}}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

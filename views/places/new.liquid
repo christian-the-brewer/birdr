@@ -1,0 +1,37 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/places" method="POST">
+        <fieldset>
+            <legend>Add A New Place!</legend>
+            <label class="form-label">Name:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="name" 
+                placeholder="Enter A Name!"
+            >
+            <label class="form-label">Description:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="description" 
+                placeholder="Describe it!"
+            >
+            <label class="form-label">Image:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="img" 
+                placeholder="Drop a link to a photo!"
+            >
+        </fieldset>
+        <input 
+            type="submit" 
+            value="Add Place!" 
+            class="btn btn-success"
+        >
+    </form>
+</div>
+{% endblock %}

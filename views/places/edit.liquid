@@ -1,0 +1,37 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/places/{{place._id}}?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Edit The {{place.name}}</legend>
+            <label class="form-label">Name:</label>
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="enter name" 
+                class="form-control"
+                value="{{place.name}}"
+            >
+            <label class="form-label">Description:</label>
+            <input 
+                type="text" 
+                name="description" 
+                class="form-control"
+                value="{{place.description}}"
+            >
+            <label class="form-label">Image:</label>
+            <input 
+                type="text" 
+                name="description" 
+                class="form-control"
+                value="{{place.img}}"
+            >
+        </fieldset>
+        <div class="btn-group">
+            <input type="submit" value="Edit {{ place.name }}" class="btn btn-success">
+            <a href="/places" class="btn btn-warning">Back</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
