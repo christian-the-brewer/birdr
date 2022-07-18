@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
 
     Bird.find({})
-        .then(bird => {
+        .then(birds => {
             res.render('birds/index', { birds })
         })
         .catch(err => {
@@ -95,7 +95,7 @@ router.get('/:id', (req, res) => {
 
     Bird.findById(birdId)
         //.populate('comments.author')
-        .then(fruit => {
+        .then(bird => {
             const userId = req.session.userId
             const username = req.session.username
             res.render('birds/show', { bird, userId, username })

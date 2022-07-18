@@ -23,10 +23,47 @@
             <label class="form-label">Image:</label>
             <input 
                 type="text" 
-                name="description" 
+                name="img" 
                 class="form-control"
                 value="{{place.img}}"
             >
+            <legend>OPTIONAL: Edit or add an address</legend>
+            <label class="form-label">Street Number:</label>
+            <input 
+                class="form-control" 
+                type="text"
+                name="address.number" 
+                value="{{place.address.number}}"
+            >
+            <label class="form-label">Street Name:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="address.streetName" 
+                value="{{place.address.streetName}}"
+            >
+            <label class="form-label">Street Type:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="address.streetType" 
+                value="{{place.address.streetType}}"
+            >
+            <label class="form-label">City:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="address.city" 
+                value="{{place.address.city}}"
+            >
+            <label class="form-label">State:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="address.state" 
+                value="{{place.address.state}}"
+            >
+        
         </fieldset>
         <div class="btn-group">
             <input type="submit" value="Edit {{ place.name }}" class="btn btn-success">

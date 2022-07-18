@@ -15,6 +15,14 @@ const placeSchema = new Schema(
             required: true,
         },
         img: String,
+        address: {
+            number: Number,
+            streetName: String,
+            streetType: String,
+            city: String,
+            state: String,
+            zip: Number
+        },
         owner: {
             type: Schema.Types.ObjectId,
             ref: 'User'
@@ -26,7 +34,7 @@ const placeSchema = new Schema(
     }
 )
 
-const Places = model('Places', placeSchema)
+const Place = model('Place', placeSchema)
 
 //EXPORT-------------------------------------------
-module.exports = Places
+module.exports = Place

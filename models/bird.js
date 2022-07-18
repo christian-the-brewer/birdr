@@ -15,6 +15,7 @@ const birdSchema = new Schema(
             required: true,
         },
         img: String,
+        seasons: [],
         owner: {
             type: Schema.Types.ObjectId,
             ref: 'User'

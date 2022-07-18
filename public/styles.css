@@ -4,4 +4,14 @@ body {
 
 .card {
     margin: 5px;
+    align-content: center;
+}
+
+img {
+    width: 250px;
+    height: 225px;
+}
+
+.nav-link {
+    margin: 10px;
 }

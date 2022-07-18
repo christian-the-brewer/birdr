@@ -1,14 +1,14 @@
 //IMPORT----------------------
 const express = require('express')
 const router = express.Router()
-const Places = require('../models/place')
+const Place = require('../models/place')
 
 
 //DELETE route to delete a place
 router.delete('/:id', (req, res) => {
     const birdId = req.params.id
 
-    Places.findByIdAndRemove(birdId)
+    Place.findByIdAndRemove(birdId)
         .then(place => {
             res.redirect('/places')
         })
@@ -21,9 +21,9 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     const birdId = req.params.id
 
-    Places.findById(birdId)
+    Place.findById(birdId)
         .then(place => {
-            res.render('place/edit', { place })
+            res.render('places/edit', { place })
         })
         .catch(err => {
             res.json(err)
@@ -34,7 +34,7 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
     const birdId = req.params.id
 
-    Places.findByIdAndUpdate(birdId, req.body, { new: true })
+    Place.findByIdAndUpdate(birdId, req.body, { new: true })
         .then(place => {
             res.redirect(`/places/${place._id}`)
         })
@@ -52,10 +52,10 @@ router.get('/new', (req, res) => {
 
 //POST route for creating 
 router.post('/', (req, res) => {
-    req.body.owner = req.session.userId
+    //req.body.owner = req.session.userId
 
     console.log(req.body)
-    Places.create(req.body)
+    Place.create(req.body)
         .then(place => {
             console.log(place)
             res.redirect('/places')
@@ -68,8 +68,8 @@ router.post('/', (req, res) => {
 //GET route for index of all places
 router.get('/', (req, res) => {
 
-    Places.find({})
-        .then(place => {
+    Place.find({})
+        .then(places => {
             res.render('places/index', { places })
         })
         .catch(err => {
@@ -79,7 +79,7 @@ router.get('/', (req, res) => {
 
 //GET route for index of user's places
 router.get('/mine', (req, res) => {
-    Places.find({ owner: req.session.userId })
+    Place.find({ owner: req.session.userId })
         .then(places => {
             res.render('places/index', { places })
         })
@@ -91,11 +91,10 @@ router.get('/mine', (req, res) => {
 
 //GET route for show a place
 router.get('/:id', (req, res) => {
-    const birdId = req.params.id
+    const placeId = req.params.id
 
-    Places.findById(birdId)
-        //.populate('comments.author')
-        .then(fruit => {
+    Place.findById(placeId)
+        .then(place => {
             const userId = req.session.userId
             const username = req.session.username
             res.render('places/show', { place, userId, username })

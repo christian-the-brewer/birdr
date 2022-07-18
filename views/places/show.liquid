@@ -4,6 +4,8 @@
         <article>
 
             <h2>{{place.name}}</h2>
+            <a href="https://www.google.com/maps/place/{{place.address.number}}+{{place.address.streetName}}+{{place.address.streetType}},+{{place.address.city}},+{{place.address.state}}"><img src="{{place.img}}" alt="{{place.name}}"></a>
+            <!-- <img src="{{place.img}}" alt="{{place.name}}"> -->
             <p>
                 {{place.description}}
             </p>
