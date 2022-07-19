@@ -3,26 +3,26 @@ An app where users can sign up, log in, log out, and keep track of birds they se
 
 User Stories:
  -Navigate to page and see a page linking to :
-    -index of all birds
-    -index al locations
-    -add bird
-    -add location
+    DONE-index of all birds
+    DONE-index al locations
+    DONE-add bird
+    DONE-add location
 
 -Click All birds and be able to:
-    -see a list of all birds in database
-    -click on a bird to go to its page
+    DONE-see a list of all birds in database 
+    DONE-click on a bird to go to its page
     -On that page you will be able to:
         -click to add a bird to your list
         -click to go back
-        -click to edit the bird
-        -click to delete the bird
+        DONE-click to edit the bird
+        DONE-click to delete the bird
 
 -Click Places and be able to:
-    -see a list of all the places
-    -click on a place and go to its page
+    DONE-see a list of all the places
+    DONE-click on a place and go to its page
     -On that page you will be able to:
-        -Maybe add google maps integration? inject the address into a maps.google url?
-        -Edit the place
+        DONE-Maybe add google maps integration? inject the address into a maps.google url?
+        DONE-Edit the place
         -see a list of birds added to that place
         -add and remove birds from the place
         -go back 
@@ -52,7 +52,8 @@ name | String
 description |String
 sound | String
 img | String
-owners | array of Strings?
+owners | 1 owner String
+places | [placerefs]  push id onto it upon creation
 
 Model: Place
 
@@ -62,7 +63,7 @@ name | String
 description |String
 img | String
 owner | String
-
+birds | [birdrefs]
 
 Model: User
 
@@ -97,3 +98,7 @@ Route Table
 | /places/ | POST | Places create route |
 | /birds/mine | GET | list users birds route |
 | /places/mine | GET | list users places route |
+
+Seed 10 birds and 10 places
+
+drop down for add place when adding a bird. 

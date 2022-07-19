@@ -1,0 +1,26 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/birds/{{bird._id}}?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Track the {{bird.name}}</legend>
+            <img src="{{bird.img}}" alt="{{bird.name}}">
+
+            <div class="search_select_box">
+                <select>
+                    {% for place in places %}
+                    <option>{{place.name}}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+            
+        </fieldset>
+        <div class="btn-group">
+            <input type="submit" value="Track {{ bird.name }}" class="btn btn-success">
+            <a href="/birds" class="btn btn-warning">Back</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

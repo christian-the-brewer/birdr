@@ -5,6 +5,7 @@ body {
 .card {
     margin: 5px;
     align-content: center;
+
 }
 
 img {
@@ -14,4 +15,8 @@ img {
 
 .nav-link {
     margin: 10px;
+}
+
+.btn {
+    margin: 5px;
 }

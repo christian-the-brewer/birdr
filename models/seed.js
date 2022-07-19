@@ -65,9 +65,36 @@ db.on('open', () => {
 
         },
         {
-            name: 'Red-tailed Hawk',
+            name: 'Red-headed Woodpecker',
             description: "Bright red heads make this wookpecker quite distinctive. They have white bellies and black wings and back",
             img: "https://www.birdadvisors.com/wp-content/uploads/2021/02/red-headed-woodpecker-3-768x512.jpg",
+            seasons: ['spring', 'summer', 'fall',],
+            places: []
+
+
+        },
+        {
+            name: 'American Robin',
+            description: "black heads, backs, and wings with a reddish belly are charactreristic of this common backyard bird.",
+            img: "https://www.birdadvisors.com/wp-content/uploads/2021/01/American-robin-1024x683.jpg",
+            seasons: ['spring', 'summer', 'fall',],
+            places: []
+
+
+        },
+        {
+            name: 'Blue Jay',
+            description: "Bright blue crests with blue wings, light bellies and black backs, these vocal songbirds are always on the search for the next meal.",
+            img: "https://www.birdadvisors.com/wp-content/uploads/2022/01/Blue-Jay-2-edited.jpg",
+            seasons: ['spring', 'summer', 'fall', 'winter'],
+            places: []
+
+
+        },
+        {
+            name: 'Marina the Timneh African Grey',
+            description: "Bright red heads make this wookpecker quite distinctive. They have white bellies and black wings and back",
+            img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogs-images.forbes.com%2Fgrrlscientist%2Ffiles%2F2016%2F10%2FAfrican-grey-parrot-1024x682.jpg&f=1&nofb=1",
             seasons: ['spring', 'summer', 'fall',],
             places: []
 

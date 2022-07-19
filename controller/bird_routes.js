@@ -105,5 +105,33 @@ router.get('/:id', (req, res) => {
         })
 })
 
+
+//GET route for tracking form
+router.get('/:id/track', (req, res) => {
+    const birdId = req.params.id
+
+    Bird.findById(birdId)
+        .then(bird => {
+            res.render('birds/track', { bird })
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+//PUT route to update bird tracking
+router.put('/:id', (req, res) => {
+    const birdId = req.params.id
+    req.body.owner = req.session.userId
+
+    Bird.findByIdAndUpdate(birdId, req.body, { new: true })
+        .then(bird => {
+            res.redirect(`/birds/${bird._id}`)
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
 //EXPORT------------------------------------
 module.exports = router
