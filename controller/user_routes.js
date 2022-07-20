@@ -60,7 +60,8 @@ router.post('/login', async (req, res) => {
                     //QUESTION where should I send it?
                     res.redirect('/')
                 } else {
-                    res.json({ error: 'username or password incorrect' })
+                    // res.json({ error: 'username or password incorrect' })
+                    res.render('./users/loginFail')
                 }
             } else {
                 res.json({ error: 'user does not exist' })

@@ -8,7 +8,8 @@
             <img src="{{bird.img}}" alt="{{bird.name}}">
 
             <div class="search_select_box">
-                <select>
+                <label for="place_select">Where did you see this {{bird.name}}?</label>
+                <select name="'place" id="place_select">
                     {% for place in places %}
                     <option>{{place.name}}</option>
                     {% endfor %}
@@ -18,7 +19,7 @@
             
         </fieldset>
         <div class="btn-group">
-            <input type="submit" value="Track {{ bird.name }}" class="btn btn-success">
+            <input type="submit" value="Add {{ bird.name }} to place" class="btn btn-success">
             <a href="/birds" class="btn btn-warning">Back</a>
         </div>
     </form>

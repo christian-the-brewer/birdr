@@ -42,7 +42,7 @@ app.use('/places', placeRoutes)
 //LOCALHOST-------------------------------------
 app.get('/', (req, res) => {
     // res.send('your server is running, better go catch it')
-    res.render('homepage')
+    res.redirect('/birds/index')
 })
 
 //SHHHHHHHSSSHH LISTEN
