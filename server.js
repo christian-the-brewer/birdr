@@ -26,7 +26,7 @@ app.use(
     session({
         secret: process.env.SECRET,
         store: MongoStore.create({
-            mongoUrl: process.env.DATABASE_URI
+            mongoUrl: process.env.MONGODB_URI
         }),
         saveUninitialized: true,
         resave: false
@@ -42,11 +42,11 @@ app.use('/places', placeRoutes)
 //LOCALHOST-------------------------------------
 app.get('/', (req, res) => {
     // res.send('your server is running, better go catch it')
-    res.redirect('/birds/index')
+    res.render('homepage')
 })
 
 //SHHHHHHHSSSHH LISTEN
 const PORT = process.env.PORT
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`be quiet, app is listening on port: ${PORT}`)
 })
