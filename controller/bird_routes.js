@@ -188,16 +188,16 @@ router.get('/seed', (req, res) => {
 
     ]
 
-    // delete if we have fruits
+
     Bird.deleteMany({})
-        // insert data
+
         .then(() => {
             Bird.create(startBirds)
-                // return this data as json to view
+
                 .then(data => {
                     res.json(data)
                 })
-                // .catch(err => console.error(err))
+
                 .catch(console.error)
         })
 })
