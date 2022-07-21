@@ -8,6 +8,13 @@
             <p>
                 {{bird.description}}
             </p>
+            <ul></ul>
+                {% for place in bird.places%}
+                <li>{{place}}</li>
+                {% endfor %}
+            </ul>
+                
+            </p>
             <div class="btn-group">
 
                 <a href="/birds/{{bird._id}}/edit" class="btn btn-primary">Edit {{bird.name}}</a>

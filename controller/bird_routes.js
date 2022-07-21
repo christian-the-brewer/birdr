@@ -227,7 +227,13 @@ router.get('/:id/track', (req, res) => {
 
     Bird.findById(birdId)
         .then(bird => {
-            res.render('birds/track', { bird })
+            Place.find({})
+                .then(places => {
+                    res.render('birds/track', { bird, places })
+                })
+                .catch(err => {
+                    res.json(err)
+                })
         })
         .catch(err => {
             res.json(err)
@@ -239,7 +245,7 @@ router.put('/:id', (req, res) => {
     const birdId = req.params.id
     req.body.owner = req.session.userId
 
-    Bird.findByIdAndUpdate(birdId, req.body, { new: true })
+    Bird.findOneAndUpdate(birdId, { $push: { places: [req.body] } }, { new: true })
         .then(bird => {
             res.redirect(`/birds/${bird._id}`)
         })

@@ -16,12 +16,12 @@ const placeSchema = new Schema(
         },
         img: String,
         address: {
-            number: Number,
+            number: String,
             streetName: String,
             streetType: String,
             city: String,
             state: String,
-            zip: Number
+            zip: String
         },
         owner: {
             type: Schema.Types.ObjectId,

@@ -97,7 +97,7 @@ router.get('/:id', (req, res) => {
         .then(place => {
             const userId = req.session.userId
             const username = req.session.username
-            res.render('places/show', { place, userId, username })
+            res.render('places/show', { place, userId, username, })
         })
         .catch(err => {
             res.json(err)
